@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+X = <input type="text" [(ngModel)]="x" /> <br />
+Y = <input type="text" [(ngModel)]="y" /><br />
+<button (click)="Jalan($event)">submit</button>
+<p>{{nama}}</p>
+<p>{{turn}}</p>
+<span *ngFor="let fruit of item; let i = index">
+  <span *ngFor="let satu of fruit; let i = index">
+    {{satu}}
+  </span>
+  <br />
+</span>
