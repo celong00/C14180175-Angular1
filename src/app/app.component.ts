@@ -21,20 +21,22 @@ export class AppComponent {
   ];
 
   Jalan(event: MouseEvent) {
-    if (this.counter == 0) {
-      this.item[this.x][this.y] = "0";
-      this.turn = "Player 2 Turn";
-      this.counter = 1;
-    } else {
-      this.turn = "Player 1 Turn";
-      this.item[this.x][this.y] = "1";
-      this.counter = 0;
-    }
-    this.check();
-    if (this.ends) {
-      (event.target as HTMLButtonElement).disabled = true;
-      this.nama = "Game Ends!!! Congratulations Player " + this.counter;
-      this.turn = "";
+    if (this.item[this.x][this.y] == "*") {
+      if (this.counter == 0) {
+        this.item[this.x][this.y] = "0";
+        this.turn = "Player 2 Turn";
+        this.counter = 1;
+      } else {
+        this.turn = "Player 1 Turn";
+        this.item[this.x][this.y] = "1";
+        this.counter = 0;
+      }
+      this.check();
+      if (this.ends) {
+        (event.target as HTMLButtonElement).disabled = true;
+        this.nama = "Game Ends!!! Congratulations Player " + this.counter;
+        this.turn = "";
+      }
     }
   }
   countermenang = 0;
